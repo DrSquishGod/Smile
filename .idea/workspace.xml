@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04309636-2bad-419f-8da7-f8a4f152cc79" name="Default Changelist" comment="Ive added Hello World as a title">
-      <change afterPath="$PROJECT_DIR$/static/smile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/menu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-    </list>
+    <list default="true" id="04309636-2bad-419f-8da7-f8a4f152cc79" name="Default Changelist" comment="Added contact,home,menu html files and also added smile css file." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,7 +109,7 @@
       <workItem from="1645581145959" duration="718000" />
       <workItem from="1645663005615" duration="2532000" />
       <workItem from="1646083249397" duration="1001000" />
-      <workItem from="1646084302308" duration="1805000" />
+      <workItem from="1646084302308" duration="1935000" />
     </task>
     <task id="LOCAL-00001" summary="Ive added Hello World as a title">
       <created>1645665536785</created>
@@ -153,7 +146,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646084851114</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added contact,home,menu html files and also added smile css file.">
+      <created>1646086162175</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1646086162175</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,7 +174,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="I displayed hello world" />
     <MESSAGE value="Ive added Hello World as a title" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ive added Hello World as a title" />
+    <MESSAGE value="Added contact,home,menu html files and also added smile css file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added contact,home,menu html files and also added smile css file." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Smile$Smile.coverage" NAME="Smile Coverage Results" MODIFIED="1646085352457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
