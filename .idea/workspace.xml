@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="04309636-2bad-419f-8da7-f8a4f152cc79" name="Default Changelist" comment="Made changes to the app.py code">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="04309636-2bad-419f-8da7-f8a4f152cc79" name="Default Changelist" comment="Made changes to the contact.html file and also added in smile.db in database section, also added the data for the database">
+      <change afterPath="$PROJECT_DIR$/static/images/aeropress.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/chemex.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/coldbrew.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/espresso.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/flatwhite.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/hotchoc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/latte.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/longblack.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/moka.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/plunger.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/v60.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/smile.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/smile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +65,11 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\18408\PycharmProjects\Smile\static\images" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.Smile">
     <configuration name="Smile" type="PythonConfigurationType" factoryName="Python">
@@ -117,7 +136,8 @@
       <workItem from="1646083249397" duration="1001000" />
       <workItem from="1646084302308" duration="1935000" />
       <workItem from="1646184499993" duration="1740000" />
-      <workItem from="1646268349829" duration="1883000" />
+      <workItem from="1646268349829" duration="2114000" />
+      <workItem from="1647292729117" duration="3196000" />
     </task>
     <task id="LOCAL-00001" summary="Ive added Hello World as a title">
       <created>1645665536785</created>
@@ -175,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646184831953</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Made changes to the contact.html file and also added in smile.db in database section, also added the data for the database">
+      <created>1646270470350</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1646270470350</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,10 +226,11 @@
     <MESSAGE value="Added contact,home,menu html files and also added smile css file." />
     <MESSAGE value="Typed in the code for smile.css, contact.html, home.html and menu.html" />
     <MESSAGE value="Made changes to the app.py code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Made changes to the app.py code" />
+    <MESSAGE value="Made changes to the contact.html file and also added in smile.db in database section, also added the data for the database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made changes to the contact.html file and also added in smile.db in database section, also added the data for the database" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Smile$Smile.coverage" NAME="Smile Coverage Results" MODIFIED="1646270243229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Smile$Smile.coverage" NAME="Smile Coverage Results" MODIFIED="1647295951464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/Smile$app.coverage" NAME="app Coverage Results" MODIFIED="1645665171859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
