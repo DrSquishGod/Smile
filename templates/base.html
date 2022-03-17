@@ -14,7 +14,7 @@
 <div class="container">
     <header>
         <h1>Sahisnu's Smile Cafe</h1>
-        <h2>Sign Up / Login</h2>
+        <h2>{% block pageheading %}{% endblock %}</h2>
     </header>
     <nav>
         <a href="/">home</a> &#8226;
@@ -22,7 +22,8 @@
         <a href="/contact">contact</a>
     </nav>
     <main>
-        <!-- some page content will go here -->
+        {% block main %}
+        {% endblock %}
     </main>
 </div>
 </body>
