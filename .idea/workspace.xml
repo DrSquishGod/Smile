@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04309636-2bad-419f-8da7-f8a4f152cc79" name="Default Changelist" comment="Committing changes for all the html files">
-      <change afterPath="$PROJECT_DIR$/templates/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/91cf2c52-47a6-4496-a1a3-eca9f1d39b0c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/91cf2c52-47a6-4496-a1a3-eca9f1d39b0c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/smile.db" beforeDir="false" afterPath="$PROJECT_DIR$/smile.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/menu.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +152,8 @@
       <workItem from="1647292729117" duration="3196000" />
       <workItem from="1647385318984" duration="7023000" />
       <workItem from="1647477429308" duration="2623000" />
-      <workItem from="1647816876613" duration="1561000" />
+      <workItem from="1647816876613" duration="1939000" />
+      <workItem from="1647897420806" duration="3172000" />
     </task>
     <task id="LOCAL-00001" summary="Ive added Hello World as a title">
       <created>1645665536785</created>
@@ -230,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647480056425</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Committing changes for all the html files">
+      <created>1647818751364</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1647818751364</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
