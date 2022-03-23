@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="04309636-2bad-419f-8da7-f8a4f152cc79" name="Default Changelist" comment="Committing changes for all the html files">
+    <list default="true" id="04309636-2bad-419f-8da7-f8a4f152cc79" name="Default Changelist" comment="committing changes made to app.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smile.db" beforeDir="false" afterPath="$PROJECT_DIR$/smile.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +63,7 @@
       <recent name="C:\Users\18408\PycharmProjects\Smile\static\images" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.app">
+  <component name="RunManager" selected="Flask server.Flask (app.py)">
     <configuration name="menu.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Smile/templates/menu.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -128,8 +128,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.app" />
         <item itemvalue="Flask server.Flask (app.py)" />
+        <item itemvalue="Python.app" />
         <item itemvalue="JavaScript Debug.menu.html" />
       </list>
     </recent_temporary>
@@ -153,7 +153,9 @@
       <workItem from="1647385318984" duration="7023000" />
       <workItem from="1647477429308" duration="2623000" />
       <workItem from="1647816876613" duration="1939000" />
-      <workItem from="1647897420806" duration="3172000" />
+      <workItem from="1647897420806" duration="3201000" />
+      <workItem from="1647900693275" duration="23000" />
+      <workItem from="1647999331535" duration="1885000" />
     </task>
     <task id="LOCAL-00001" summary="Ive added Hello World as a title">
       <created>1645665536785</created>
@@ -232,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647818751364</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="committing changes made to app.py">
+      <created>1647900645617</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1647900645617</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,11 +267,12 @@
     <MESSAGE value="Made changes to the app.py code" />
     <MESSAGE value="Made changes to the contact.html file and also added in smile.db in database section, also added the data for the database" />
     <MESSAGE value="Committing changes for all the html files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Committing changes for all the html files" />
+    <MESSAGE value="committing changes made to app.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="committing changes made to app.py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Smile$Smile.coverage" NAME="Smile Coverage Results" MODIFIED="1647242409011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/Smile$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1647479564410" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/Smile$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1648000320041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/Smile$app.coverage" NAME="app Coverage Results" MODIFIED="1647817700761" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
