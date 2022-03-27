@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, session, redirect
 import sqlite3
 from sqlite3 import Error
-
 from flask_bcrypt import Bcrypt
+from datetime import datetime
 
 #DB_NAME = "C:/Users/18408/PycharmProjects/smilev2/smile.db"
 DB_NAME = "smile.db"
@@ -13,16 +13,15 @@ app.scecret_key = "SquishGod"
 
 
 def create_connection(db_file):
-    """create a connection to the sqlite db"""
-    try:
-        connection = sqlite3.connect(db_file)
-        # intialise_tables(connection)
-        return connection
-    except Error as e:
-        print(e)
+   """create a connection to the sqlite db"""
+   try:
+       connection = sqlite3.connect(db_file)
+       connection.execute('pragma foreign_keys=ON')
+       return connection
+   except Error as e:
+       print(e)
 
-    return None
-
+   return None
 
 @app.route('/')
 def render_homepage():
@@ -130,5 +129,34 @@ def is_logged_in():
     else:
         print("logged in")
         return True
+
+@app.route('/addtocart/<productid>')
+def addtocart(productid):
+    try:
+        productid=int(productid)
+    except ValueError:
+        print("{} is not an integer".format(productid))
+        return redirect("/menu?error=Invalid+product+id")
+
+    userid = session['userid']
+    timestamp = datetime.now()
+    print("User {} would like to add {} to cart at {}".format(userid, productid,timestamp))
+
+    query = "INSERT INTO cart(id,userid,productid,timestamp) VALUES (NULL,?,?,?)"
+    con = create_connection(DB_NAME)
+    cur = con.cursor()  # You need this line next
+
+    try:
+        cur.execute(query,(userid, productid, timestamp))
+    except sqlite3.IntegrityError as e:
+        print(e)
+        print("### PROBLEM INSERTING INTO DATABASE - FOREIGN KEY ###")
+        con.close()
+        return redirect('/menu?error=Something+went+very+very+wrong')
+
+    # everything works, commit the insertion or the system will immediately roll it back
+    con.commit()
+    con.close()
+    return redirect('/menu')
 
 app.run(host="0.0.0.0", debug=True)
