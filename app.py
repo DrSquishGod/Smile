@@ -107,6 +107,7 @@ def render_signup_page():
         cur = con.cursor()  # You need this line next
         try:
             cur.execute(query, (fname, lname, email, hashed_password))  # This line actually executes the query
+            print("executed")
         except sqlite3.IntegrityError:
             return redirect('/signup?error=Email+is+already+used')
         con.commit()
@@ -133,7 +134,7 @@ def is_logged_in():
 @app.route('/addtocart/<productid>')
 def addtocart(productid):
     try:
-        productid=int(productid)
+        productid = int(productid)
     except ValueError:
         print("{} is not an integer".format(productid))
         return redirect("/menu?error=Invalid+product+id")

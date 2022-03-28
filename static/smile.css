@@ -87,7 +87,8 @@ a, a:visited {
 }
 
 .product-box img {
-    /*max-width:200px;*/
+    width: 150px;
+    height: 125px;
 }
 
 .products {
