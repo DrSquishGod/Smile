@@ -9,7 +9,7 @@ DB_NAME = "smile.db"
 
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
-app.scecret_key = "SquishGod"
+app.secret_key = "SquishGod"
 
 
 def create_connection(db_file):
