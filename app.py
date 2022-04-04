@@ -15,17 +15,16 @@ app = Flask(__name__)
 bcrypt = Bcrypt(app)
 app.secret_key = "SquishGod"
 
-
 def create_connection(db_file):
-   """create a connection to the sqlite db"""
-   try:
-       connection = sqlite3.connect(db_file)
-       connection.execute('pragma foreign_keys=ON')
-       return connection
-   except Error as e:
-       print(e)
+    """create a connection to the sqlite db"""
+    try:
+        connection = sqlite3.connect(db_file)
+        connection.execute('pragma foreign_keys=ON')
+        return connection
+    except Error as e:
+        print(e)
 
-   return None
+    return None
 
 def send_confirmation(order_info):
    print(order_info)
@@ -69,26 +68,27 @@ def send_confirmation(order_info):
        except SMTPAuthenticationError as e:
            print(e)
 
+
 @app.route('/')
 def render_homepage():
-    return render_template('home.html', logged_in=is_logged_in())
+    return render_template("home.html", logged_in=is_logged_in())
 
 
 @app.route('/menu')
 def render_menu_page():
-
     # connect to the database
+    print("loading menu")
     con = create_connection(DB_NAME)
-
+    print("tried connection")
     # SELECT the things you want from your table(s)
-    query = "SELECT name, description, volume, price, image FROM product"
+    query = "SELECT id, name, description, volume, price, image FROM product"
 
-    cur = con.cursor() # You need this line next
-    cur.execute(query) # This line actually executes the query
-    product_list = cur.fetchall() # Puts the results into a list usable in python
+    cur = con.cursor()  # You need this line next
+    cur.execute(query)  # This line actually executes the query
+    product_list = cur.fetchall()  # Puts the results into a list usable in python
     con.close()
 
-    return render_template("menu.html", products = product_list, logged_in=is_logged_in())
+    return render_template("menu.html", products=product_list, logged_in=is_logged_in())
 
 
 @app.route('/contact')
@@ -96,14 +96,14 @@ def render_contact():
     return render_template("contact.html", logged_in=is_logged_in())
 
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/login', methods=["GET", "POST"])
 def render_login_page():
     if is_logged_in():
         return redirect('/')
 
-    if request.method == 'POST':
-        email = request.form.get('email').strip().lower()
-        password = request.form.get('password').strip()
+    if request.method == "POST":
+        email = request.form['email'].strip().lower()
+        password = request.form['password'].strip()
 
         query = """SELECT id, fname, password FROM customer WHERE email = ?"""
         con = create_connection(DB_NAME)
@@ -111,7 +111,8 @@ def render_login_page():
         cur.execute(query, (email,))
         user_data = cur.fetchall()
         con.close()
-
+        # if given the email is not in the database this will raise an error
+        # would be better to find out how to see if the query return an empty request
         try:
             userid = user_data[0][0]
             firstname = user_data[0][1]
@@ -119,17 +120,25 @@ def render_login_page():
         except IndexError:
             return redirect("/login?error=Email+invalid+or+password+incorrect")
 
+        # check if the password is incorrect for that email address
+
         if not bcrypt.check_password_hash(db_password, password):
             return redirect(request.referrer + "?error=Email+invalid+or+password+incorrect")
+
         session['email'] = email
         session['userid'] = userid
         session['firstname'] = firstname
         print(session)
         return redirect('/')
+
     return render_template('login.html', logged_in=is_logged_in())
+
 
 @app.route('/signup', methods=['GET', 'POST'])
 def render_signup_page():
+    if is_logged_in():
+        return redirect('/')
+
     if request.method == 'POST':
         print(request.form)
         fname = request.form.get('fname').strip().title()
@@ -145,22 +154,23 @@ def render_signup_page():
             return redirect('/signup?error=Password+must+be+8+characters+or+more')
 
         hashed_password = bcrypt.generate_password_hash(password)
+
         con = create_connection(DB_NAME)
 
-        query = "INSERT INTO customer(id, fname, lname, email, password) " \
-                "VALUES(NULL, ?, ?, ?, ?)"
+        query = "INSERT INTO customer(id, fname, lname, email, password) VALUES (NULL,?,?,?,?)"
 
         cur = con.cursor()  # You need this line next
         try:
             cur.execute(query, (fname, lname, email, hashed_password))  # This line actually executes the query
-            print("executed")
         except sqlite3.IntegrityError:
             return redirect('/signup?error=Email+is+already+used')
+
         con.commit()
         con.close()
         return redirect('/login')
 
     return render_template('signup.html', logged_in=is_logged_in())
+
 
 @app.route('/logout')
 def logout():
@@ -169,6 +179,7 @@ def logout():
     print(list(session.keys()))
     return redirect(request.referrer + '?message=See+you+next+time!')
 
+
 def is_logged_in():
     if session.get("email") is None:
         print("not logged in")
@@ -176,6 +187,7 @@ def is_logged_in():
     else:
         print("logged in")
         return True
+
 
 @app.route('/addtocart/<productid>')
 def addtocart(productid):
@@ -187,24 +199,24 @@ def addtocart(productid):
 
     userid = session['userid']
     timestamp = datetime.now()
-    print("User {} would like to add {} to cart at {}".format(userid, productid,timestamp))
-
-    query = "INSERT INTO cart(id,userid,productid,timestamp) VALUES (NULL,?,?,?)"
+    print("User {} would you like to add {} to cart at {}".format(userid, productid, timestamp))
+    query = "INSERT INTO cart(id, userid, productid, timestamp) VALUES (NULL,?,?,?)"
     con = create_connection(DB_NAME)
-    cur = con.cursor()  # You need this line next
+    cur = con.cursor()
 
+    # try to INSERT - this will fail if there is a foreign key issue
     try:
-        cur.execute(query,(userid, productid, timestamp))
+        cur.execute(query, (userid, productid, timestamp))
     except sqlite3.IntegrityError as e:
         print(e)
-        print("### PROBLEM INSERTING INTO DATABASE - FOREIGN KEY ###")
+        print("### PROBLEM INSERTING INTO THE DATABASE - FOREIGN KEY ###")
         con.close()
         return redirect('/menu?error=Something+went+very+very+wrong')
 
-    # everything works, commit the insertion or the system will immediately roll it back
     con.commit()
     con.close()
     return redirect('/menu')
+
 
 @app.route('/cart')
 def render_cart():
@@ -215,9 +227,6 @@ def render_cart():
     cur.execute(query, (userid, ))
     product_ids = cur.fetchall()
     print(product_ids)   # U - G - L - Y
-
-    if len(product_ids)==0:
-        return redirect('/menu?error=Cart+empty')
 
     # the results from the query are a list of sets, loop through and pull out the ids
     for i in range(len(product_ids)):
@@ -234,7 +243,7 @@ def render_cart():
 
     query = """SELECT name, price FROM product WHERE id=?;"""
     for item in unique_product_ids:
-        cur.execute(query, (item[0]))    # item[0] os the productid
+        cur.execute(query, (item[0],))    # item[0] os the productid
         item_details = cur.fetchall()    # this transforms the result into a python list
         print(item_details)              # this will print something like [('Latte', 4)]
         item.append(item_details[0][0])  # add the product name to the list
@@ -248,14 +257,15 @@ def render_cart():
 @app.route('/removeonefromcart/<product_id>')
 def render_remove_page(product_id):
     print("Remove item {}".format(product_id))
-    customer_id = session['customerid']
-    query = "DELETE FROM cart WHERE id =(SELECT MIN(id) FROM cart WHERE proudctid=? and customerid=?);"
+    customer_id = session['userid']
+    query = "DELETE FROM cart WHERE id =(SELECT MIN(id) FROM cart WHERE productid=? and userid=?);"
     con = create_connection(DB_NAME)
-    cur = con.curson()
+    cur = con.cursor()
     cur.execute(query, (product_id, customer_id))
     con.commit()
     con.close()
     return redirect('/cart')
+
 
 @app.route('/confirmorder')
 def confirmorder():
@@ -293,5 +303,6 @@ def confirmorder():
    con.close()
    send_confirmation(unique_product_ids)
    return redirect('/?message=Order+complete')
+
 
 app.run(host="0.0.0.0", debug=True)
